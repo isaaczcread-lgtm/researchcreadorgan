@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Étude Comparative CREAD vs 9 Centres de Recherche | Rapport académique moderne</title>
+    <title>Étude comparative | Centres de recherche algériens – Données factuelles et standardisées</title>
     <style>
         * {
             margin: 0;
@@ -12,412 +12,391 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, 'Roboto', sans-serif;
-            background: linear-gradient(145deg, #f4f9ff 0%, #eef2f8 100%);
-            color: #1a2c3e;
-            padding: 2rem 1.5rem;
+            background: #eef2f5;
+            font-family: 'Segoe UI', 'Roboto', 'Noto Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
             line-height: 1.5;
+            color: #1a2c3e;
+            padding: 2rem 1rem;
         }
 
-        /* Conteneur principal pour PDF / impression */
-        .report-container {
-            max-width: 1400px;
+        .document-wrapper {
+            max-width: 1280px;
             margin: 0 auto;
-            background: rgba(255,255,255,0.92);
-            backdrop-filter: blur(0px);
-            border-radius: 2rem;
-            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.2), 0 2px 6px rgba(0,0,0,0.05);
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
             overflow: hidden;
-            padding: 2rem 1.8rem;
-            transition: all 0.2s;
+            padding: 2.5rem 2rem;
         }
 
-        /* en-tête coloré */
-        .hero {
-            background: linear-gradient(135deg, #0B2B40 0%, #1B4F6E 50%, #2C7A5E 100%);
-            border-radius: 1.5rem;
-            padding: 2rem 2rem 1.8rem;
-            margin-bottom: 2rem;
-            color: white;
-            box-shadow: 0 12px 20px -10px rgba(0,32,64,0.3);
-        }
-
-        .hero h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.3px;
+        /* Typographie raffinée */
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            background: linear-gradient(135deg, #1e4a6b, #0f2c3f);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
             margin-bottom: 0.5rem;
+            border-left: 5px solid #2c7da0;
+            padding-left: 1rem;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #2c5a74;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #dce5ec;
+            padding-bottom: 0.75rem;
+            font-weight: 450;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 1.8rem 0 1rem 0;
+            color: #1f5068;
+            border-left: 4px solid #61a5c2;
+            padding-left: 0.9rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.4rem 0 0.7rem 0;
+            color: #2c5a6e;
+            display: inline-block;
+            background: #e9f0f5;
+            padding: 0.15rem 0.7rem;
+            border-radius: 20px;
+        }
+
+        .card-center {
+            background: #fafeff;
+            border-radius: 24px;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 0 0 1px #e2edf2;
+            overflow: hidden;
+            transition: all 0.1s ease;
+        }
+
+        .center-header {
+            background: #f0f6fa;
+            padding: 0.9rem 1.5rem;
+            border-bottom: 2px solid #cbdde6;
+        }
+
+        .center-header h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #0d3b4f;
+            margin: 0;
             display: flex;
-            align-items: center;
-            gap: 12px;
+            align-items: baseline;
             flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
-        .hero h1::before {
-            content: "📊";
-            font-size: 2rem;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-top: 0.5rem;
-            max-width: 85%;
-        }
-
-        .method-badge {
-            background: rgba(255,255,240,0.18);
-            padding: 0.5rem 1rem;
-            border-radius: 60px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+        .ref-badge {
+            background: #2c7da0;
+            font-size: 0.7rem;
             font-weight: 500;
-            backdrop-filter: blur(4px);
+            color: white;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+        }
+
+        .center-content {
+            padding: 1.2rem 1.5rem 1.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .info-block {
+            background: #ffffff;
+            border-left: 4px solid #89c2d9;
+            padding: 0.7rem 1rem;
+            border-radius: 14px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+
+        .info-label {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 0.6px;
+            color: #2c7da0;
+            margin-bottom: 0.35rem;
+        }
+
+        .info-text {
+            font-size: 0.98rem;
+            color: #1e2f3a;
+            line-height: 1.45;
+        }
+
+        hr.divider-light {
+            margin: 1rem 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, #cbdde6, transparent);
+        }
+
+        .highlight-quote {
+            background: #eef4f9;
+            padding: 1.2rem 1.5rem;
+            border-radius: 20px;
+            margin: 1.5rem 0;
+            font-style: normal;
+            border-left: 5px solid #1f7b9e;
+            font-weight: 500;
+            color: #1a4b62;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .insight-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.8rem 0;
+        }
+
+        .model-card {
+            flex: 1;
+            min-width: 220px;
+            background: #fefefe;
+            border-radius: 20px;
+            border: 1px solid #e0ecf2;
+            padding: 1.2rem;
+        }
+
+        .model-card strong {
+            color: #1e6f8f;
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .scenario-list {
+            background: #f9fbfd;
+            border-radius: 20px;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .org-chart {
+            background: #f8fafc;
+            border-radius: 24px;
+            padding: 1.5rem;
+            font-family: 'SF Mono', 'Menlo', monospace;
+            font-size: 0.9rem;
+            border: 1px solid #cde1ea;
+            line-height: 1.7;
             margin-top: 1rem;
         }
 
-        /* sections */
-        .section-title {
-            font-size: 1.7rem;
-            font-weight: 700;
-            margin: 1.8rem 0 1rem 0;
-            padding-left: 0.8rem;
-            border-left: 6px solid #2A9D8F;
-            color: #0F3B3E;
-        }
-
-        .grid-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .list-centers {
-            background: white;
-            border-radius: 1.2rem;
-            padding: 1.2rem 1.8rem;
-            box-shadow: 0 5px 12px rgba(0,0,0,0.05);
-            border: 1px solid rgba(42,157,143,0.2);
-            transition: all 0.2s;
-        }
-
-        .list-centers ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem 1.5rem;
-            list-style: none;
-            margin-top: 0.5rem;
-        }
-
-        .list-centers li {
-            background: #eef6f2;
-            padding: 0.25rem 1rem;
-            border-radius: 40px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            color: #1F5E53;
-        }
-
-        /* tableau moderne responsive */
-        .table-wrapper {
-            overflow-x: auto;
-            margin: 1.8rem 0;
-            border-radius: 1.2rem;
-            background: white;
-            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1);
-            border: 1px solid #e2edf2;
-        }
-
-        .comp-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.85rem;
-            min-width: 1000px;
-        }
-
-        .comp-table th {
-            background: linear-gradient(120deg, #1e5a5a, #287a6e);
-            color: white;
-            padding: 14px 10px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-align: center;
-            border-right: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .comp-table td {
-            border-bottom: 1px solid #dce9ef;
-            padding: 12px 8px;
-            vertical-align: top;
-            background-color: #ffffff;
-            color: #1f2f38;
-            transition: background 0.1s;
-        }
-
-        .comp-table tr:hover td {
-            background-color: #f6fbfe;
-        }
-
-        .comp-table td:first-child {
-            font-weight: 700;
-            background-color: #f8fdf7;
-            border-right: 2px solid #cbe5de;
-            font-size: 0.85rem;
-        }
-
-        .badge-scopus {
-            background: #ffd966;
-            color: #3b3b1f;
-            padding: 2px 8px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-top: 4px;
-        }
-
-        .badge-doaj {
-            background: #b7d7e8;
-            color: #0a4b6e;
-            padding: 2px 8px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            display: inline-block;
-        }
-
-        .keyword {
-            font-weight: 600;
-            color: #1f6e5c;
-        }
-
-        /* analyse synthétique */
-        .insight-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .insight-card {
-            background: white;
-            border-radius: 1.2rem;
-            padding: 1.2rem 1.4rem;
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03);
-            border-top: 5px solid #2A9D8F;
-            transition: transform 0.1s;
-        }
-
-        .insight-card h3 {
-            font-size: 1.3rem;
-            color: #1D5A5A;
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .ref-list {
-            background: #f7fafc;
-            padding: 1.4rem 1.8rem;
-            border-radius: 1.2rem;
-            margin: 2rem 0 1rem;
-            border-left: 8px solid #287a6e;
-        }
-
-        .ref-list h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-            color: #134e4a;
-        }
-
-        .ref-list p {
-            font-size: 0.8rem;
-            font-family: monospace;
-            margin-bottom: 0.2rem;
-        }
-
-        .conclusion {
-            background: linear-gradient(110deg, #eef4f0, #ffffff);
+        .conclusion-box {
+            background: #e4f0f5;
             padding: 1.5rem 2rem;
-            border-radius: 1.2rem;
+            border-radius: 28px;
             margin-top: 2rem;
-            border: 1px solid #c7e0d8;
+            border: 1px solid #bfdae6;
         }
 
-        .footer-note {
+        footer {
+            margin-top: 2.5rem;
             text-align: center;
-            font-size: 0.7rem;
-            margin-top: 2rem;
-            opacity: 0.7;
-            border-top: 1px solid #cbdbe2;
-            padding-top: 1rem;
+            font-size: 0.75rem;
+            color: #6c8fa3;
+            border-top: 1px solid #d4e2ea;
+            padding-top: 1.5rem;
         }
 
-        @media print {
-            body {
-                background: white;
-                padding: 0.2in;
+        @media (max-width: 720px) {
+            .document-wrapper {
+                padding: 1.2rem;
             }
-            .hero {
-                break-inside: avoid;
+            h1 {
+                font-size: 1.5rem;
             }
-            .comp-table td, .comp-table th {
-                font-size: 9pt;
-            }
-            .table-wrapper {
-                overflow-x: visible;
-            }
-            .insight-card, .ref-list {
-                break-inside: avoid;
+            .center-header h4 {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
-<div class="report-container">
-    <!-- en-tête moderne -->
-    <div class="hero">
-        <h1>Étude comparative détaillée</h1>
-        <p><strong>CREAD</strong> (Centre de Recherche en Économie, Administration et Développement) <br>vs <strong>9 centres stratégiques</strong> : CRASC, CERIST, CRSTDLA, CRAPC, CRSTRA, CRAAG, CRBT, CRTSE, CDER</p>
-        <div class="method-badge">
-            🔍 Méthodologie : sites officiels (2023–2024) · rapports d’activité · statuts · CRIS · Scopus/DOAJ · mise à jour mars 2024
+<div class="document-wrapper">
+    <h1>📊 Collecte de données factuelle et standardisée<br><span style="font-size:1.1rem;">10 centres de recherche algériens</span></h1>
+    <div class="subhead">🔍 Priorité : sciences humaines, sociales, économiques, linguistiques & impact sociétal — variables clés : <strong>relations extérieures / communication</strong> et <strong>mode de gestion des revues scientifiques</strong>.</div>
+
+    <!-- ===================== SECTION 1-10 : Fiches centres ===================== -->
+    <!-- 1. CREAD -->
+    <div class="card-center">
+        <div class="center-header">
+            <h4>1. CREAD <span class="ref-badge">Point de référence</span></h4>
+            <div style="font-size:0.85rem; color:#2c697e;">Centre de Recherche en Économie Appliquée pour le Développement</div>
+        </div>
+        <div class="center-content">
+            <div class="info-block"><div class="info-label">🌐 Relations extérieures & communication</div><div class="info-text">Gérées par le <strong>Département des Relations Extérieures et de la Valorisation des Résultats de la Recherche (DREVRR)</strong>. Conventions institutionnelles et accueil des partenaires économiques.</div></div>
+            <div class="info-block"><div class="info-label">📄 Gestion de la revue « Les Cahiers du CREAD »</div><div class="info-text">Rattachée au <strong>Service Valorisation</strong> (sous-partie du DREVRR). Gestion opérationnelle : bénévolat académique (chercheurs auto-organisation pour relectures, mise en page, interactions ASJP).</div></div>
         </div>
     </div>
 
-    <!-- 5 axes clés -->
-    <div class="list-centers">
-        <div style="font-weight:700; margin-bottom:8px;">📌 Axes d'analyse</div>
-        <ul>
-            <li>1. Départements techniques</li>
-            <li>2. Structure chargée des relations extérieures & valorisation</li>
-            <li>3. Revues scientifiques institutionnelles</li>
-            <li>4. Composante responsable de la gestion de la revue</li>
-            <li>5. Structure chargée de la production scientifique</li>
-        </ul>
+    <!-- 2. CRASC -->
+    <div class="card-center">
+        <div class="center-header"><h4>2. CRASC</h4><div>Centre de Recherche en Anthropologie Sociale et Culturelle</div></div>
+        <div class="center-content">
+            <div class="info-block"><div class="info-label">🌐 Relations extérieures & com</div><div class="info-text">Division autonome de l'animation scientifique. Forte présence réseaux académiques internationaux, partenariats avec universités étrangères (co-organisation séminaires).</div></div>
+            <div class="info-block"><div class="info-label">📚 Gestion des revues (Insaniyat, Turath)</div><div class="info-text"><strong>Modèle le plus robuste</strong> : Division Édition et Valorisation dédiée, Service des revues avec personnel administratif permanent, infographistes PAO, cellules de traduction. Revues externalisées sur OpenEdition + ASJP.</div></div>
+        </div>
     </div>
 
-    <!-- tableau comparatif principal -->
-    <div class="table-wrapper">
-        <table class="comp-table">
-            <thead>
-                <tr><th>Critères / Centres</th><th>CREAD</th><th>CRASC</th><th>CERIST</th><th>CRSTDLA</th><th>CRAPC</th><th>CRSTRA</th><th>CRAAG</th><th>CRBT</th><th>CRTSE</th><th>CDER</th></tr>
-            </thead>
-            <tbody>
-                <!-- ligne 1 départements techniques -->
-                <tr>
-                    <td>🏛️ 1. Départements techniques</td>
-                    <td>- Économie et Gestion<br>- Sciences Sociales et Politiques<br>- Développement Durable</td>
-                    <td>- Génie Agricole<br>- Biotechnologies Végétales<br>- Technologies Alimentaires</td>
-                    <td>- Génie Informatique<br>- Matériaux et Énergies<br>- Systèmes d'Information</td>
-                    <td>- Technologies Agriculture Durable<br>- Gestion des Ressources Naturelles<br>- Géomatique</td>
-                    <td>- Production Végétale<br>- Pêche et Aquaculture<br>- Gestion Écosystèmes</td>
-                    <td>- Recherche Agronomique<br>- Technologie des Aliments<br>- Mécanisation Agricole</td>
-                    <td>- Génétique & Amélioration Plantes<br>- Sécurité Alimentaire<br>- Technologies Agroalimentaires</td>
-                    <td>- Biotechnologies Microbiennes<br>- Génie Génétique<br>- Bioprocédés</td>
-                    <td>- Technologies Environnement<br>- Qualité de l’Air et Eau<br>- Surveillance Écologique</td>
-                    <td>- Photovoltaïque<br>- Biomasse & Biogaz<br>- Stockage Énergétique</td>
-                </tr>
-                <!-- ligne 2 relations extérieures -->
-                <tr>
-                    <td>🤝 2. Relations extérieures & valorisation</td>
-                    <td><span class="keyword">Service de Valorisation de la Recherche (SVR)</span><br>→ Partenariats publics-privés, transfert technologique, brevets</td>
-                    <td><span class="keyword">Bureau des Relations Internationales (BRI)</span><br>→ Partenariats UE, FAO, ONG</td>
-                    <td><span class="keyword">Direction Valorisation & Partenariats (DVP)</span><br>→ Incubateur, spin-offs, brevets</td>
-                    <td><span class="keyword">Service Liaison Partenaires (SLPP)</span><br>→ Coopération collectivités locales</td>
-                    <td><span class="keyword">Bureau Liaison Secteurs Productifs (BLSP)</span><br>→ Valorisation agricole</td>
-                    <td><span class="keyword">Service Développement Partenariats (SDP)</span><br>→ Recherche appliquée</td>
-                    <td><span class="keyword">Service Valorisation & Transfert (SVTT)</span><br>→ Accompagnement agriculteurs</td>
-                    <td><span class="keyword">Service Valorisation Résultats (SVR)</span><br>→ Brevets, licences, incubation</td>
-                    <td><span class="keyword">Service Liaison Industriels (SLI)</span><br>→ Projets industriels</td>
-                    <td><span class="keyword">Service Développement Partenariats (SDP)</span><br>→ Projets énergétiques internationaux</td>
-                </tr>
-                <!-- ligne 3 revues scientifiques -->
-                <tr>
-                    <td>📖 3. Revue scientifique institutionnelle</td>
-                    <td><strong>Revue Africaine Économie et Développement (RAED)</strong><br>ISSN 2114-7088<br>Indexée : DOAJ, EBSCO, AJOL</td>
-                    <td><strong>JAST</strong><br>ISSN 2224-3542<br><span class="badge-scopus">Scopus</span> <span class="badge-doaj">DOAJ</span></td>
-                    <td><strong>IJSR</strong><br>ISSN 2225-8733<br><span class="badge-scopus">Scopus</span> Google Scholar</td>
-                    <td><strong>RRDD</strong><br>ISSN 2589-4755<br>DOAJ, Open J-Gate</td>
-                    <td><strong>Revue Agriculture & Environnement (RAE)</strong><br>ISSN 2315-4420<br>DOAJ, AJOL</td>
-                    <td><strong>JART</strong><br>ISSN 2319-7778<br><span class="badge-scopus">Scopus</span> DOAJ</td>
-                    <td><strong>Revue Agriculture Agroalimentaire (RAA)</strong><br>ISSN 2225-8733<br>DOAJ, AJOL</td>
-                    <td><strong>JBBE</strong><br>ISSN 2225-8733<br><span class="badge-scopus">Scopus</span> DOAJ</td>
-                    <td><strong>JETS</strong><br>ISSN 2225-8733<br><span class="badge-scopus">Scopus</span> DOAJ</td>
-                    <td><strong>IJRED</strong><br>ISSN 2252-8806<br><span class="badge-scopus">Scopus</span> DOAJ</td>
-                </tr>
-                <!-- ligne 4 gestion revue -->
-                <tr>
-                    <td>📌 4. Composante gestion de la revue</td>
-                    <td>Comité rédaction interne (CREAD)<br>→ Direction scientifique : Directeur CREAD</td>
-                    <td>Comité externe (Univ. Sidi Bel-Abbès)<br>→ Co-direction Prof. A. Benali</td>
-                    <td>Comité centralisé (CERIST)<br>→ Secrétariat : Direction de la Recherche</td>
-                    <td>Comité interne CRSTDLA<br>→ Service Communication Scientifique</td>
-                    <td>Comité interne CRAPC<br>→ Bureau de la Recherche</td>
-                    <td>Comité interne CRSTRA<br>→ Service Documentation</td>
-                    <td>Comité interne CRAAG<br>→ Service de la Recherche</td>
-                    <td>Comité interne CRBT<br>→ Service Communication</td>
-                    <td>Comité interne CRTSE<br>→ Service Recherche</td>
-                    <td>Comité interne CDER<br>→ Service Communication</td>
-                </tr>
-                <!-- ligne 5 production scientifique -->
-                <tr>
-                    <td>📈 5. Structure chargée production scientifique</td>
-                    <td>Unité Production Scientifique (UPS)<br>→ Suivi publications, appui chercheurs, évaluation</td>
-                    <td>Unité Suivi Prod. Scientifique (USPS)<br>→ h-index, indicateurs performance</td>
-                    <td>Unité Suivi Recherche (USR)<br>→ Financement publications, rédaction</td>
-                    <td>Unité Production & Suivi Scientifique (UPSS)<br>→ Analyse tendances</td>
-                    <td>Unité Production Scientifique (UPS)<br>→ Gestion projets recherche</td>
-                    <td>Unité Production & Suivi (UP&S)<br>→ Suivi articles, peer review</td>
-                    <td>Unité Production Scientifique (UPS)<br>→ Coordination publications</td>
-                    <td>Unité Production & Valorisation (UPV)<br>→ Soutien chercheurs</td>
-                    <td>Unité Production Scientifique (UPS)<br>→ Suivi articles, évaluation</td>
-                    <td>Unité Production Scientifique (UPS)<br>→ Soutien chercheurs, publications</td>
-                </tr>
-            </tbody>
-        </table>
+    <!-- 3. CRSTDLA -->
+    <div class="card-center">
+        <div class="center-header"><h4>3. CRSTDLA</h4><div>Centre de Recherche Scientifique et Technique pour le Développement de la Langue Arabe</div></div>
+        <div class="center-content">
+            <div class="info-block"><div class="info-label">🌐 Relations extérieures</div><div class="info-text"><strong>Division des Relations Extérieures et de la Valorisation</strong> scindée : Service communication, Service valorisation, Service manifestations scientifiques.</div></div>
+            <div class="info-block"><div class="info-label">📖 Revue du Centre & Cahiers du Centre</div><div class="info-text">Production rattachée à la <strong>Division du suivi des activités de la recherche</strong>. Aspects techniques : Service des bases de données et de l'audiovisuel (numérisation, intégration web).</div></div>
+        </div>
     </div>
 
-    <!-- analyse synthétique en cartes modernes -->
-    <div class="section-title">📌 Analyse comparative synthétique</div>
+    <!-- 4. CNRPAH -->
+    <div class="card-center">
+        <div class="center-header"><h4>4. CNRPAH</h4><div>Centre National de Recherches Préhistoriques, Anthropologiques et Historiques</div></div>
+        <div class="center-content">
+            <div class="info-block"><div class="info-label">🌐 Relations extérieures</div><div class="info-text">Gérées directement avec le Ministère de la Culture et institutions patrimoniales internationales (UNESCO, musées). Communication événementielle grand public (expositions, colloques).</div></div>
+            <div class="info-block"><div class="info-label">🏛 Revue Libyca</div><div class="info-text">Cellule d’archives et documentation scientifique interne. Secrétariat adossé aux départements de recherche (chercheurs gèrent manuscrits par spécialité d’époque).</div></div>
+        </div>
+    </div>
+
+    <!-- 5. CRSIC -->
+    <div class="card-center">
+        <div class="center-header"><h4>5. CRSIC</h4><div>Centre National de Recherche dans les Sciences Islamiques et de Civilisation</div></div>
+        <div class="center-content">
+            <div class="info-block"><div class="info-label">🌐 Relations extérieures</div><div class="info-text">Service de communication axé rayonnement régional (coopération universités Sud algérien et monde arabo-islamique).</div></div>
+            <div class="info-block"><div class="info-label">📜 Revue Al-Miyar / Revue du Centre</div><div class="info-text">Rattachée à la Direction Scientifique, comité éditorial permanent structuré pour répondre aux critères DGRSDT. Soumissions centralisées sur OJS/ASJP.</div></div>
+        </div>
+    </div>
+
+    <!-- 6. CRLCA -->
+    <div class="card-center">
+        <div class="center-header"><h4>6. CRLCA</h4><div>Centre de Recherche en Langue et Culture Amazighes</div></div>
+        <div class="center-content">
+            <div class="info-block"><div class="info-label">🌐 Relations extérieures</div><div class="info-text">Service des relations extérieures actif dans les accords avec universités nationales disposant de départements de langue amazighe.</div></div>
+            <div class="info-block"><div class="info-label">📗 Revue du CRLCA</div><div class="info-text">Projet d'édition transversal. Équipe éditoriale s'appuie sur service documentation pour correction texte, encodage caractères spécifiques (Tifinagh) et suivi des dépôts d'articles.</div></div>
+        </div>
+    </div>
+
+    <!-- 7. INRE -->
+    <div class="card-center">
+        <div class="center-header"><h4>7. INRE</h4><div>Institut National de Recherche en Éducation</div></div>
+        <div class="center-content">
+            <div class="info-block"><div class="info-label">🌐 Relations extérieures</div><div class="info-text">Fortement institutionnelles, coordination avec le Ministère de l'Éducation Nationale. Communication comme interface pour vulgariser les rapports d'études.</div></div>
+            <div class="info-block"><div class="info-label">📘 Revue Algérienne de l'Éducation</div><div class="info-text">Gérée par le service de l'information pédagogique et des publications. Manuscrits traités par comités mixtes (chercheurs et inspecteurs d'éducation) avec secrétariat technique centralisé.</div></div>
+        </div>
+    </div>
+
+    <!-- 8. CRSTRA -->
+    <div class="card-center">
+        <div class="center-header"><h4>8. CRSTRA</h4><div>Centre de Recherche Scientifique et Technique sur les Régions Arides</div></div>
+        <div class="center-content">
+            <div class="info-block"><div class="info-label">🌐 Relations extérieures</div><div class="info-text">Service des Relations Extérieures et de la Prospective, couplé à un chargé de communication scientifique.</div></div>
+            <div class="info-block"><div class="info-label">🌵 JARA – Journal Algérien des Régions Arides</div><div class="info-text">Coordination et secrétariat technique centralisés sous la responsabilité du Service de la Documentation Scientifique et Technique et des Éditions. Gestion formalisée dans l'organigramme technique.</div></div>
+        </div>
+    </div>
+
+    <!-- 9. CNERMN54 -->
+    <div class="card-center">
+        <div class="center-header"><h4>9. CNERMN54</h4><div>Centre National d'Études et de Recherche sur le Mouvement National et la Révolution du 1er Novembre 1954</div></div>
+        <div class="center-content">
+            <div class="info-block"><div class="info-label">🌐 Relations extérieures</div><div class="info-text">Service des relations publiques très visible, collaboration avec Ministère des Moudjahidine, archives nationales et laboratoires d'histoire.</div></div>
+            <div class="info-block"><div class="info-label">📜 Revue d'Études et de Recherches</div><div class="info-text">Comité de rédaction permanent adossé au conseil scientifique. Édition (mise en page, relectures historiques) intégrée comme mission prioritaire des chercheurs permanents détachés à la publication.</div></div>
+        </div>
+    </div>
+
+    <!-- 10. CERIST -->
+    <div class="card-center">
+        <div class="center-header"><h4>10. CERIST</h4><div>Centre de Recherche sur l'Information Scientifique et Technique (infrastructure SHS incontournable)</div></div>
+        <div class="center-content">
+            <div class="info-block"><div class="info-label">🌐 Relations extérieures</div><div class="info-text">Départements d'ingénierie de la formation et de coopération technologique, interface nationale pour le réseau académique ARN.</div></div>
+            <div class="info-block"><div class="info-label">⚙️ Gestion des revues (hébergeur ASJP)</div><div class="info-text"><strong>Division Information Scientifique et Documentation</strong> : infrastructure industrielle d'ingénieurs systèmes et spécialistes métadonnées. Forment les comités de relecture de tous les centres aux standards d’indexation.</div></div>
+        </div>
+    </div>
+
+    <!-- Synthèse introductive de l’analyse (premier bloc après fiches) -->
+    <div class="highlight-quote">
+        📌 Cette collecte met en évidence que les centres performants ont <strong>extrait l'activité éditoriale du simple bénévolat de recherche</strong> pour l'adosser à un service technique permanent (Documentation, Édition dédiée, Informatique).
+    </div>
+
+    <!-- =============== PARTIE ANALYSE STRATÉGIQUE ============= -->
+    <h2>📌 Analyse stratégique — Enseignements pour le CREAD et au-delà</h2>
+
+    <h3>1. Principal facteur de performance : professionnalisation de la fonction éditoriale</h3>
     <div class="insight-grid">
-        <div class="insight-card"><h3>🏛️ Départements techniques</h3><p>Tous les centres présentent des structures techniques affirmées. <strong>CREAD</strong> se singularise par une orientation sciences sociales & économie, tandis que les autres sont majoritairement centrés sur agronomie, biotech, énergies.</p></div>
-        <div class="insight-card"><h3>🤝 Relations extérieures & valorisation</h3><p><span class="keyword">CERIST</span> et <span class="keyword">CRASC</span> possèdent les dispositifs les plus développés (incubateurs, partenariats internationaux). <strong>CREAD</strong> dispose d’un SVR solide mais moins intégré aux chaînes industrielles.</p></div>
-        <div class="insight-card"><h3>📖 Revues scientifiques & visibilité</h3><p>CERIST, CRSTRA, CDER, CRBT publient dans des revues <strong class="keyword">indexées Scopus</strong>, renforçant leur rayonnement mondial. CREAD publie la <em>RAED</em> (DOAJ, AJOL) mais gagnerait en visibilité Scopus.</p></div>
-        <div class="insight-card"><h3>✍️ Gestion des revues</h3><p>Majorité des centres avec comité interne; CERIST et CRASC recourent à des <strong>partenariats externes</strong> (universités) pour renforcer qualité éditoriale.</p></div>
-        <div class="insight-card"><h3>📊 Production scientifique</h3><p>CERIST, CRBT, CDER disposent d’unités dédiées intégrant indicateurs avancés (h-index, évaluation). CREAD possède une unité fonctionnelle mais moins automatisée.</p></div>
+        <div class="model-card"><strong>📦 Modèle artisanal</strong> Bénévolat des chercheurs, organisation informelle (ex. CREAD). Limites : irrégularité, dépendance.</div>
+        <div class="model-card"><strong>🏭 Modèle professionnalisé</strong> Structure administrative/technique permanente (CRASC, CERIST, CRSTRA) → régularité, visibilité internationale, conformité indexation.</div>
+    </div>
+    <div class="highlight-quote" style="background:#eaf3f7;">💡 La qualité et la pérennité d'une revue scientifique dépendent moins de l'excellence scientifique des chercheurs que de l'existence d'une infrastructure éditoriale dédiée.</div>
+
+    <h3>2. Positionnement organisationnel de la revue → efficacité</h3>
+    <p><strong>a) Rattachement aux relations extérieures</strong> (cas CREAD) : avantages de valorisation mais dilution, absence spécialisation.<br>
+    <strong>b) Rattachement à documentation/information scientifique</strong> (CRSTRA, CERIST) : stabilité administrative, maîtrise normes, risque de technicisation excessive.<br>
+    <strong>c) Division édition autonome</strong> (CRASC) : spécialisation maximale, profils PAO/traduction/secrétariat, fort développement international.</p>
+    <div class="highlight-quote">📈 Plus la structure chargée de la revue est autonome et spécialisée, plus la performance éditoriale est élevée.</div>
+
+    <h3>3. Décalage CREAD : importance scientifique vs dispositif éditorial</h3>
+    <p>Les Cahiers du CREAD reposent encore sur contributions bénévoles, organisation informelle, absence de personnel éditorial permanent → vulnérabilités : retards, surcharge chercheurs, dépendance individuelle.</p>
+    <div class="highlight-quote">⚠️ La sophistication scientifique du centre n'est pas reflétée par le niveau d'institutionnalisation de son activité éditoriale.</div>
+
+    <h3>4. Évolution de la communication → logique de valorisation scientifique</h3>
+    <p>Services relations extérieures deviennent acteurs de visibilité scientifique, internationalisation, diffusion numérique. La revue devient instrument de diplomatie scientifique et levier d'attractivité.</p>
+    <div class="highlight-quote">🎯 La gestion des revues doit être pensée comme une composante stratégique de la communication institutionnelle.</div>
+
+    <h3>5. Logique d'écosystème (centres les plus performants)</h3>
+    <p>Gouvernance scientifique claire + secrétariat permanent + soutien documentaire + compétences techniques + dispositifs diffusion. Aucun acteur ne porte seul la charge éditoriale.</p>
+    <div class="highlight-quote">🤝 L'édition scientifique performante est une activité collective qui mobilise des compétences multiples.</div>
+
+    <h3>6. Trois scénarios d'évolution pour le CREAD</h3>
+    <div class="scenario-list">
+        <p><strong>🔹 Scénario 1 – Maintien modèle actuel :</strong> bénévolat → stabilité court terme mais risque d'essoufflement, difficultés indexation.</p>
+        <p><strong>🔸 Scénario 2 – Renforcement progressif :</strong> création secrétariat de rédaction permanent, recrutement agent technique, formalisation procédures → amélioration régularité, diminution charge chercheurs. <em>Réaliste à moyen terme.</em></p>
+        <p><strong>🔹 Scénario 3 – Structure éditoriale dédiée :</strong> mise en place d'une <strong>Cellule Édition Scientifique</strong> (PAO, documentation, communication) – gestion centralisée des revues → professionnalisation complète, meilleure visibilité internationale (inspiré CRASC).</p>
     </div>
 
-    <!-- conclusion et recommandation -->
-    <div class="conclusion">
-        <h3 style="color:#1F5E53; margin-bottom: 12px;">✅ Conclusion & recommandations stratégiques</h3>
-        <p>Le <strong>CREAD</strong> se distingue par une <strong>approche interdisciplinaire forte</strong> en sciences sociales, économie et développement. Cependant, pour accroître sa visibilité scientifique, il pourrait intégrer davantage de revues indexées <strong>Scopus</strong> et moderniser ses outils de suivi de la production scientifique. Les modèles de <strong>CERIST, CRBT, CDER et CRSTRA</strong> montrent des avancées significatives en matière de valorisation et de structuration éditoriale.</p>
-        <p style="margin-top:10px; background:#e9f3ef; padding:0.6rem; border-radius:12px;">💡 <strong>Recommandation :</strong> Le CREAD pourrait s'inspirer des modèles de CERIST et CDER pour renforcer sa stratégie de valorisation et son suivi scientifique, tout en préservant son identité en sciences humaines et sociales.</p>
+    <h3>7. Proposition stratégique pour l'organigramme cible du CREAD</h3>
+    <div class="org-chart">
+        <strong>🏛 Direction Générale</strong><br>
+        ↓<br>
+        <strong>Département des Relations Extérieures et de la Valorisation</strong><br>
+        &nbsp;&nbsp;├─ Service des Relations Institutionnelles<br>
+        &nbsp;&nbsp;├─ Service de la Communication Scientifique<br>
+        &nbsp;&nbsp;└─ <strong>🧬 Cellule Édition Scientifique</strong><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ Secrétariat permanent des <em>Cahiers du CREAD</em><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ Gestion ASJP et métadonnées<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ Assistance mise en page<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ Coordination des traductions<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ Suivi indicateurs qualité éditoriale<br>
+        ↓<br>
+        <strong>Comité scientifique de la revue</strong> (validation scientifique, orientation éditoriale, désignation évaluateurs)
+    </div>
+    <p style="margin-top:0.8rem;">✅ Cette configuration préserve le leadership scientifique des chercheurs, transfère les tâches techniques vers des personnels dédiés et améliore la continuité institutionnelle.</p>
+
+    <!-- Conclusion générale -->
+    <div class="conclusion-box">
+        <h3 style="margin:0 0 0.5rem 0; background: none; padding-left:0;">🎯 Conclusion générale</h3>
+        <p>L'étude comparative démontre que les centres algériens les plus performants ont <strong>désindividualisé</strong> la gestion de leurs revues : ils ont fait évoluer l'édition scientifique d'une activité bénévole vers une fonction institutionnelle, puis vers une compétence stratégique intégrée.</p>
+        <p>Le CREAD dispose des ressources scientifiques nécessaires pour rejoindre ce groupe de référence, mais <strong>l’optimisation de sa revue ne dépend plus prioritairement de réformes scientifiques, mais d’une réforme organisationnelle</strong>. La question n’est donc plus de savoir <em>si</em> la revue doit être soutenue par une structure permanente, mais <em>quel degré d’institutionnalisation</em> le CREAD souhaite lui accorder.</p>
+        <div class="highlight-quote" style="background:#cfe3ed; margin-top:0.8rem;">📖 La pérennité repose moins sur le dévouement des individus que sur la solidité des structures qui les soutiennent.</div>
     </div>
 
-    <!-- références académiques -->
-    <div class="ref-list">
-        <h4>📚 Références académiques & sources officielles (2023–2024)</h4>
-        <p>1. CREAD – Université Sidi Bel-Abbès. (2023). <em>Rapport d’Activité 2022-2023</em> → https://www.cread.univ-sba.dz</p>
-        <p>2. CRASC – Université Tlemcen. (2023). Statuts du Centre de Recherche en Agriculture, Sciences et Technologies.</p>
-        <p>3. CERIST – Centre de Recherche Scientifique et Technique. (2024). Annuaire revues indexées → https://www.cerist.dz</p>
-        <p>4. CRSTDLA – Université Biskra. Site web institutionnel.</p>
-        <p>5. CRAPC – Université Constantine. Rapport d’activité 2022.</p>
-        <p>6. CRSTRA – Université Médéa. JART (Scopus Index).</p>
-        <p>7. CRAAG – Revue Agriculture et Agroalimentaire (RAA) – DOAJ.</p>
-        <p>8. CRBT – Université Bouira. Journal of Biotechnology and Bioprocess Engineering (Scopus).</p>
-        <p>9. CRTSE – Université Béjaïa. Revue Technologie Environnementale.</p>
-        <p>10. CDER – Centre Développement Énergies Renouvelables. IJRED – Scopus → https://www.cder.dz</p>
-        <p>11. DOAJ – Directory of Open Access Journals. (2024) · 12. Scopus – Elsevier (2024) · 13. AJOL – African Journals Online (2024).</p>
-        <p style="margin-top:6px;"><em>Données actualisées au 31 mars 2024, issues des sites officiels, bases CRIS, Scopus & rapports internes.</em></p>
-    </div>
-
-    <!-- note de mise à jour -->
-    <div class="footer-note">
-        📐 Étude comparative académique – Conception moderne pour usage PDF et visualisation enrichie. Tous droits crédités aux sources institutionnelles.
-    </div>
+    <footer>
+        Données factuelles et standardisées — collecte comparative des 10 centres de recherche algériens (sciences humaines, sociales, économiques, linguistiques, impact sociétal).<br>
+        Modèles organisationnels & perspectives pour l’édition scientifique.
+    </footer>
 </div>
 </body>
 </html>
